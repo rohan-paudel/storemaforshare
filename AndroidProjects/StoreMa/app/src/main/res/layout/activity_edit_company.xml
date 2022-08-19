@@ -1,0 +1,574 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/background_white"
+    android:orientation="vertical">
+
+
+    <com.google.android.material.card.MaterialCardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/fragment_margin_top"
+        android:elevation="2dp"
+        app:cardBackgroundColor="@color/background_white"
+        app:cardElevation="0dp">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="24dp"
+            android:layout_marginEnd="24dp">
+
+
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/btn_back_activity_setup_charges"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:cardBackgroundColor="@android:color/transparent"
+                app:cardElevation="0dp"
+                app:layout_constraintBottom_toBottomOf="@id/string_title_add_items"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="@id/string_title_add_items">
+
+
+                <View
+                    android:layout_width="12dp"
+                    android:layout_height="24dp"
+                    android:layout_margin="12dp"
+                    android:background="@drawable/ic_left_click_arrow_bold" />
+
+
+            </com.google.android.material.card.MaterialCardView>
+
+
+            <TextView
+                android:id="@+id/string_title_add_items"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/montserrat_semibold"
+                android:gravity="center"
+                android:text="@string/string_edit_business"
+                android:textColor="@color/fragment_title_color"
+                android:textSize="24sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+    </com.google.android.material.card.MaterialCardView>
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/background_white"
+        android:scrollbars="none">
+
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/app_start_margin"
+                android:layout_marginTop="@dimen/container_top_margin"
+                android:layout_marginEnd="@dimen/app_end_margin"
+                android:orientation="vertical"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <TextView
+                    style="@style/text_bold_montserrat"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/string_about_business"
+                    android:textSize="18sp" />
+
+                <com.google.android.material.card.MaterialCardView
+                    android:id="@+id/btn_add_business_icon"
+                    android:layout_width="154dp"
+                    android:layout_height="118dp"
+                    android:layout_marginTop="@dimen/inter_container_top_margin"
+                    app:cardBackgroundColor="@android:color/transparent"
+                    app:cardCornerRadius="10dp"
+                    app:cardElevation="0dp">
+
+                    <ImageView
+                        android:id="@+id/img_business_icon"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:scaleType="centerCrop"
+                        android:src="@mipmap/girl_smile_pic"
+                        android:visibility="gone" />
+
+
+                    <View
+                        android:id="@+id/view_business_icon"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/ic_add_icon_button_business" />
+
+
+                </com.google.android.material.card.MaterialCardView>
+
+
+                <com.google.android.material.textfield.TextInputLayout
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/inter_container_top_margin"
+                    android:hint="@string/string_business_name"
+                    android:textColorHighlight="@color/blue_button"
+                    app:boxStrokeColor="@color/blue_button"
+
+                    app:hintTextColor="@color/blue_button">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/business_name"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:autofillHints=""
+                        android:ems="10"
+                        android:fontFamily="@font/montserrat_light"
+                        android:imeOptions="actionNext"
+                        android:inputType="text"
+                        android:maxLines="1"
+                        android:singleLine="true"
+                        android:textColor="@color/black"
+                        android:textSize="16sp" />
+                </com.google.android.material.textfield.TextInputLayout>
+
+
+                <com.google.android.material.textfield.TextInputLayout
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/inter_container_top_margin"
+                    android:hint="@string/string_gstin"
+                    android:textColorHighlight="@color/blue_button"
+                    app:boxStrokeColor="@color/blue_button"
+
+                    app:hintTextColor="@color/blue_button">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/gst"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:autofillHints=""
+                        android:ems="10"
+                        android:fontFamily="@font/montserrat_light"
+                        android:imeOptions="actionNext"
+                        android:inputType="text"
+                        android:maxLines="1"
+                        android:singleLine="true"
+                        android:textColor="@color/black"
+                        android:textSize="16sp" />
+                </com.google.android.material.textfield.TextInputLayout>
+
+
+                <com.google.android.material.textfield.TextInputLayout
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/inter_container_top_margin"
+                    android:hint="@string/string_email_address"
+                    android:textColorHighlight="@color/blue_button"
+                    app:boxStrokeColor="@color/blue_button"
+                    app:hintTextColor="@color/blue_button">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/email"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:autofillHints="emailAddress"
+                        android:ems="10"
+                        android:fontFamily="@font/montserrat_light"
+                        android:imeOptions="actionNext"
+                        android:inputType="textEmailAddress"
+                        android:maxLines="1"
+                        android:singleLine="true"
+                        android:textColor="@color/black"
+                        android:textSize="16sp" />
+                </com.google.android.material.textfield.TextInputLayout>
+
+
+                <TextView
+                    style="@style/text_bold_montserrat"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/container_top_margin"
+                    android:text="@string/string_extra_details"
+                    android:textSize="18sp" />
+
+
+                <com.google.android.material.textfield.TextInputLayout
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/inter_container_top_margin"
+                    android:hint="@string/string_business_address"
+                    android:textColorHighlight="@color/blue_button"
+                    app:boxStrokeColor="@color/blue_button"
+
+                    app:hintTextColor="@color/blue_button">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/address"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:autofillHints="postalAddress"
+                        android:ems="10"
+                        android:fontFamily="@font/montserrat_light"
+                        android:imeOptions="actionNext"
+                        android:inputType="textPostalAddress"
+
+                        android:maxLines="1"
+                        android:singleLine="true"
+                        android:textColor="@color/black"
+                        android:textSize="16sp" />
+                </com.google.android.material.textfield.TextInputLayout>
+
+
+                <com.google.android.material.textfield.TextInputLayout
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/inter_container_top_margin"
+                    android:hint="@string/string_business_description"
+                    android:textColorHighlight="@color/blue_button"
+                    app:boxStrokeColor="@color/blue_button"
+
+                    app:hintTextColor="@color/blue_button">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/description"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:autofillHints=""
+                        android:ems="10"
+                        android:fontFamily="@font/montserrat_light"
+                        android:imeOptions="normal"
+                        android:inputType="textMultiLine"
+                        android:textColor="@color/black"
+                        android:textSize="16sp" />
+                </com.google.android.material.textfield.TextInputLayout>
+
+
+                <TextView
+                    android:id="@+id/business_type"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/inter_container_top_margin"
+                    android:autofillHints=""
+                    android:drawablePadding="20dp"
+                    android:ems="10"
+                    android:fontFamily="@font/montserrat_light"
+                    android:hint="@string/string_business_type"
+                    android:textColor="@color/half_black"
+                    android:textSize="16sp" />
+
+
+                <androidx.cardview.widget.CardView
+
+                    android:layout_width="match_parent"
+                    android:layout_height="45dp"
+                    android:layout_marginTop="8dp"
+                    android:background="@drawable/button_background_fill"
+                    android:paddingBottom="14dp"
+                    app:cardCornerRadius="@dimen/button_radius"
+                    app:cardElevation="0dp">
+
+                    <Spinner
+                        android:id="@+id/business_type_spinner"
+                        android:layout_width="match_parent"
+                        android:layout_height="45dp" />
+
+                </androidx.cardview.widget.CardView>
+
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/button_extra_fields"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/inter_container_top_margin">
+
+
+                    <View
+
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/button_height"
+                        android:background="@drawable/button_background_stroke"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <TextView
+                        style="@style/text_bold_montserrat"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/string_add_field"
+                        android:textColor="@color/blue_button"
+                        android:textSize="14sp"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/main_extra_field_1_title"
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/inter_container_top_margin"
+                    android:hint="@string/string_field_name_1"
+                    android:textColorHighlight="@color/blue_button"
+                    android:visibility="gone"
+                    app:boxStrokeColor="@color/blue_button"
+
+                    app:hintTextColor="@color/blue_button">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/extra_field_1_title"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:autofillHints=""
+                        android:ems="10"
+                        android:fontFamily="@font/montserrat_light"
+                        android:imeOptions="actionNext"
+                        android:inputType="text"
+                        android:maxLines="1"
+                        android:singleLine="true"
+                        android:textColor="@color/black"
+                        android:textSize="16sp"
+                        android:visibility="gone" />
+                </com.google.android.material.textfield.TextInputLayout>
+
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/main_extra_field_1_value"
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/inter_container_top_margin"
+                    android:hint="@string/string_field_value_1"
+                    android:textColorHighlight="@color/blue_button"
+                    android:visibility="gone"
+                    app:boxStrokeColor="@color/blue_button"
+                    app:hintTextColor="@color/blue_button">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/extra_field_1_value"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:autofillHints=""
+                        android:ems="10"
+                        android:fontFamily="@font/montserrat_light"
+                        android:imeOptions="actionNext"
+                        android:inputType="text"
+                        android:maxLines="1"
+                        android:singleLine="true"
+                        android:textColor="@color/black"
+                        android:textSize="16sp"
+                        android:visibility="gone" />
+                </com.google.android.material.textfield.TextInputLayout>
+
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/main_extra_field_2_title"
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/inter_container_top_margin"
+                    android:hint="@string/string_field_name_2"
+                    android:textColorHighlight="@color/blue_button"
+                    android:visibility="gone"
+                    app:boxStrokeColor="@color/blue_button"
+
+                    app:hintTextColor="@color/blue_button">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/extra_field_2_title"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:autofillHints=""
+                        android:ems="10"
+                        android:fontFamily="@font/montserrat_light"
+                        android:imeOptions="actionNext"
+                        android:inputType="text"
+                        android:maxLines="1"
+                        android:singleLine="true"
+                        android:textColor="@color/black"
+                        android:textSize="16sp"
+                        android:visibility="gone" />
+                </com.google.android.material.textfield.TextInputLayout>
+
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/main_extra_field_2_value"
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/inter_container_top_margin"
+                    android:hint="@string/string_field_value_2"
+                    android:textColorHighlight="@color/blue_button"
+                    android:visibility="gone"
+                    app:boxStrokeColor="@color/blue_button"
+                    app:hintTextColor="@color/blue_button">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/extra_field_2_value"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:autofillHints=""
+                        android:ems="10"
+                        android:fontFamily="@font/montserrat_light"
+                        android:imeOptions="actionNext"
+                        android:inputType="text"
+                        android:maxLines="1"
+                        android:singleLine="true"
+                        android:textColor="@color/black"
+                        android:textSize="16sp"
+                        android:visibility="gone" />
+                </com.google.android.material.textfield.TextInputLayout>
+
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/main_extra_field_3_title"
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/inter_container_top_margin"
+                    android:hint="@string/string_field_name_3"
+                    android:textColorHighlight="@color/blue_button"
+                    android:visibility="gone"
+                    app:boxStrokeColor="@color/blue_button"
+
+                    app:hintTextColor="@color/blue_button">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/extra_field_3_title"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:autofillHints=""
+                        android:ems="10"
+                        android:fontFamily="@font/montserrat_light"
+                        android:imeOptions="actionNext"
+                        android:inputType="text"
+                        android:maxLines="1"
+                        android:singleLine="true"
+                        android:textColor="@color/black"
+                        android:textSize="16sp"
+                        android:visibility="gone" />
+                </com.google.android.material.textfield.TextInputLayout>
+
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/main_extra_field_3_value"
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/inter_container_top_margin"
+                    android:hint="@string/string_field_value_3"
+                    android:textColorHighlight="@color/blue_button"
+                    android:visibility="gone"
+                    app:boxStrokeColor="@color/blue_button"
+                    app:hintTextColor="@color/blue_button">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/extra_field_3_value"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:autofillHints=""
+                        android:ems="10"
+                        android:fontFamily="@font/montserrat_light"
+                        android:imeOptions="actionDone"
+                        android:inputType="text"
+                        android:maxLines="1"
+                        android:singleLine="true"
+                        android:textColor="@color/black"
+                        android:textSize="16sp"
+                        android:visibility="gone" />
+                </com.google.android.material.textfield.TextInputLayout>
+
+
+                <com.google.android.material.card.MaterialCardView
+                    android:id="@+id/btn_signature_icon"
+                    android:layout_width="154dp"
+                    android:layout_height="118dp"
+                    android:layout_marginTop="@dimen/inter_container_top_margin"
+                    app:cardBackgroundColor="@android:color/transparent"
+                    app:cardCornerRadius="10dp"
+                    app:cardElevation="0dp">
+
+                    <ImageView
+                        android:id="@+id/img_signature_icon"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:scaleType="centerCrop"
+                        android:src="@mipmap/girl_smile_pic"
+                        android:visibility="gone" />
+
+                    <View
+                        android:id="@+id/view_signature_icon"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/ic_add_signature_button_business" />
+
+
+                </com.google.android.material.card.MaterialCardView>
+
+
+                <ProgressBar
+                    android:id="@+id/add_business_progress"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="@dimen/container_top_margin"
+                    android:visibility="gone" />
+
+                <com.google.android.material.card.MaterialCardView
+                    android:id="@+id/btn_sign_up_done"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/button_height"
+                    android:layout_marginTop="@dimen/container_top_margin"
+                    android:background="@drawable/button_background_fill"
+                    app:cardBackgroundColor="@color/blue_button"
+                    app:cardCornerRadius="@dimen/button_radius"
+                    app:cardElevation="0dp">
+
+
+                    <TextView
+                        style="@style/text_bold_montserrat"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:padding="11dp"
+                        android:text="@string/string_done_editing"
+                        android:textColor="@color/full_white"
+                        android:textSize="14sp" />
+
+
+                </com.google.android.material.card.MaterialCardView>
+
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="15dp" />
+
+            </LinearLayout>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.core.widget.NestedScrollView>
+</LinearLayout>

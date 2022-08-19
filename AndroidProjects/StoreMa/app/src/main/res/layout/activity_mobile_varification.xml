@@ -1,0 +1,262 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/background_white"
+    android:fillViewport="true"
+    android:scrollbars="none"
+    tools:context=".activities.MobileVarificationActivity">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:id="@+id/img_view_app_icon"
+            android:layout_width="82dp"
+            android:layout_height="90dp"
+            android:layout_marginStart="@dimen/app_start_margin"
+            android:layout_marginTop="@dimen/app_top_margin"
+            android:background="@mipmap/ic_launcher"
+            android:contentDescription="@string/string_app_logo"
+            android:scaleType="centerCrop"
+            android:src="@mipmap/ic_launcher"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageView
+            android:id="@+id/img_view_app_theme"
+            android:layout_width="match_parent"
+            android:layout_height="192dp"
+            android:layout_marginTop="@dimen/container_top_margin"
+            android:background="@mipmap/girl_smile_pic"
+            android:contentDescription="@string/string_theme_image_of_an_app"
+            android:scaleType="centerCrop"
+            android:src="@mipmap/girl_smile_pic"
+            app:layout_constraintTop_toBottomOf="@+id/img_view_app_icon" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/app_start_margin"
+            android:layout_marginTop="@dimen/container_top_margin"
+            android:layout_marginEnd="@dimen/app_end_margin"
+            android:orientation="vertical"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/img_view_app_theme">
+
+            <TextView
+                style="@style/text_bold_montserrat"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/string_verify_your_otp_here"
+                android:textSize="18sp" />
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/inter_container_top_margin"
+                android:gravity="center"
+                android:orientation="horizontal">
+
+
+                <EditText
+                    android:id="@+id/inputCode1"
+                    android:layout_width="50dp"
+                    android:layout_height="wrap_content"
+                    android:ems="10"
+                    android:fontFamily="@font/montserrat_bold"
+                    android:gravity="center"
+                    android:imeOptions="actionNext"
+                    android:importantForAutofill="no"
+                    android:inputType="number"
+                    android:maxLength="1"
+                    android:maxLines="1"
+                    android:singleLine="true"
+                    android:textColor="@color/black"
+                    android:textColorHighlight="@color/blue_button"
+                    android:textColorHint="@color/half_black"
+                    android:textSize="24sp"
+                    tools:ignore="LabelFor" />
+
+                <EditText
+                    android:id="@+id/inputCode2"
+                    android:layout_width="50dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="4dp"
+                    android:ems="10"
+                    android:fontFamily="@font/montserrat_bold"
+                    android:gravity="center"
+                    android:imeOptions="actionNext"
+                    android:importantForAutofill="no"
+
+                    android:inputType="number"
+                    android:maxLength="1"
+                    android:maxLines="1"
+                    android:singleLine="true"
+                    android:textColor="@color/black"
+                    android:textColorHighlight="@color/blue_button"
+                    android:textColorHint="@color/half_black"
+                    android:textSize="24sp"
+                    tools:ignore="LabelFor" />
+
+                <EditText
+                    android:id="@+id/inputCode3"
+                    android:layout_width="50dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="4dp"
+                    android:ems="10"
+                    android:fontFamily="@font/montserrat_bold"
+                    android:gravity="center"
+                    android:imeOptions="actionNext"
+                    android:importantForAutofill="no"
+                    android:inputType="number"
+                    android:maxLength="1"
+                    android:maxLines="1"
+                    android:singleLine="true"
+                    android:textColor="@color/black"
+                    android:textColorHighlight="@color/blue_button"
+                    android:textColorHint="@color/half_black"
+                    android:textSize="24sp"
+                    tools:ignore="LabelFor" />
+
+                <EditText
+                    android:id="@+id/inputCode4"
+                    android:layout_width="50dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="4dp"
+                    android:ems="10"
+                    android:fontFamily="@font/montserrat_bold"
+                    android:gravity="center"
+                    android:imeOptions="actionNext"
+                    android:importantForAutofill="no"
+                    android:inputType="number"
+                    android:maxLength="1"
+                    android:maxLines="1"
+                    android:singleLine="true"
+                    android:textColor="@color/black"
+                    android:textColorHighlight="@color/blue_button"
+                    android:textColorHint="@color/half_black"
+                    android:textSize="24sp"
+                    tools:ignore="LabelFor" />
+
+
+                <EditText
+                    android:id="@+id/inputCode5"
+                    android:layout_width="50dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="4dp"
+                    android:ems="10"
+                    android:fontFamily="@font/montserrat_bold"
+                    android:gravity="center"
+                    android:imeOptions="actionNext"
+                    android:importantForAutofill="no"
+                    android:inputType="number"
+                    android:maxLength="1"
+                    android:maxLines="1"
+                    android:singleLine="true"
+                    android:textColor="@color/black"
+                    android:textColorHighlight="@color/blue_button"
+                    android:textColorHint="@color/half_black"
+                    android:textSize="24sp"
+                    tools:ignore="LabelFor" />
+
+                <EditText
+                    android:id="@+id/inputCode6"
+                    android:layout_width="50dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="4dp"
+                    android:ems="10"
+                    android:fontFamily="@font/montserrat_bold"
+                    android:gravity="center"
+                    android:imeOptions="actionDone"
+                    android:importantForAutofill="no"
+                    android:inputType="number"
+                    android:maxLength="1"
+                    android:maxLines="1"
+                    android:singleLine="true"
+                    android:textColor="@color/black"
+                    android:textColorHighlight="@color/blue_button"
+                    android:textColorHint="@color/half_black"
+                    android:textSize="24sp"
+                    tools:ignore="LabelFor" />
+
+
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/simple_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:visibility="gone"
+                android:layout_marginTop="@dimen/container_top_margin"
+                android:fontFamily="@font/montserrat_light"
+                android:text="@string/string_don_t_receive_the_otp"
+                android:textColor="@color/black"
+                android:textSize="16sp" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btn_log_in"
+                style="@style/Widget.MaterialComponents.Button.TextButton"
+                android:layout_width="wrap_content"
+                android:layout_height="37dp"
+                android:layout_gravity="center"
+                android:contextClickable="true"
+                android:fontFamily="@font/montserrat_bold"
+                android:padding="0dp"
+                android:visibility="gone"
+                android:text="@string/string_resend"
+                android:textAllCaps="false"
+                android:textColor="@color/danger"
+                android:textSize="15sp"
+                app:rippleColor="#DADAFF" />
+
+            <ProgressBar
+                android:id="@+id/mobile_verification_progress"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:visibility="gone"
+                android:layout_gravity="center"
+                android:layout_marginTop="@dimen/container_top_margin"/>
+
+
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/btn_confirm_otp"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/button_height"
+                android:layout_marginTop="@dimen/container_top_margin"
+                android:background="@drawable/button_background_fill"
+                app:cardBackgroundColor="@color/blue_button"
+                app:cardCornerRadius="@dimen/button_radius"
+                app:cardElevation="0dp">
+
+
+                <TextView
+                    style="@style/text_bold_montserrat"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:padding="11dp"
+                    android:text="@string/string_confirm"
+                    android:textColor="@color/full_white"
+                    android:textSize="14sp" />
+
+
+            </com.google.android.material.card.MaterialCardView>
+
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="15dp" />
+
+
+        </LinearLayout>
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</ScrollView>

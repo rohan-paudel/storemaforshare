@@ -1,0 +1,189 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 400;
+    background-color: #F2F2F7;
+  
+  
+  }
+
+
+
+  #itemNameDiv{
+
+    padding: 8px;
+    width: 80%;
+    margin-bottom: 8px;
+
+  }
+
+  #itemName {
+    font-weight: 600;
+  }
+
+  #itemImageDiv{
+
+    
+    margin: auto;
+    width: 92%;
+    
+    
+    
+
+  }
+
+  #itemImage{
+    
+    width: 100%;
+    margin-bottom: 12px;
+
+  }
+
+  #item_description{
+
+
+    width: 92%;
+
+  }
+
+  /* #main{
+
+   
+
+
+  } */
+
+  #mainCategory{
+
+    font-weight: 500;
+    padding: 8px;
+    
+
+  }
+
+  #category_name{
+       margin: 8px;
+        padding: 8px;
+        font-weight: 500;
+        opacity: 0.8;
+        color: white;
+        background-color: #c30909;
+        border-radius: 8px;
+        position: absolute;
+
+  }
+
+  #mainDescription {
+    margin: 8px;
+    font-weight: 400;
+    padding-bottom: 12px;
+  }
+
+
+  #item_description {
+    font-weight: 300;
+    padding-left: 8px;
+    padding-right: 8px;
+    width: auto;
+    opacity: 0.5;
+    float: left;
+    text-decoration: line-through;
+    
+
+  }
+
+  #itemPrice{
+    padding-left: 8px;
+    padding-right: 8px;
+    font-weight: 500;
+    font-size: medium;
+    position: relative;
+    width: auto;
+
+  }
+
+
+
+  #buy-button {
+    width: 30px;
+    height: 30px;
+    font-size: 18px;
+    outline: none;
+    z-index: 1;
+
+    border-radius: 6px;
+    position: relative;
+    border: none;
+
+    margin-left: 12px;
+    margin-top: 42px;
+    margin-right: 8px;
+    
+    cursor: pointer;
+    float:right;
+    bottom: 0;
+    font-weight: 600;
+    border: solid #5856D6;
+    border-width: 1px;
+
+    color: #5856D6;
+    background-color: transparent;
+  }
+
+
+  #view-button{
+
+    width: 30px;
+    height: 30px;
+    font-size: 18px;
+    outline: none;
+
+    z-index: 1;
+    border-radius: 6px;
+    position: relative;
+    border: none;
+    
+
+    margin-right: 8px;
+    margin-top: 42px;
+
+    
+    cursor: pointer;
+    float:left;
+    margin-left: 12px;
+    bottom: 0;
+    color: rgb(255, 10, 10);
+    background-color: transparent;
+    font-weight: 600;
+    border: solid rgb(255, 10, 10);
+    border-width: 1px;
+
+
+
+  }
+
+  #number_of_items {
+    width: 100%;
+    font-weight: 600;
+    letter-spacing: 3;
+    margin-top: 42px;
+    position: absolute;
+
+  }
+
+
+  #goBack{
+    width: 80%;
+    height: 40px;
+    margin-top: 18px;
+    background-color: #5856D6;
+    border-radius: 10px;
+    color: white;
+    font-weight: 600;
+    border: none;
+  }

@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Store Ma</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;800&display=swap');
+        </style>
+
+    <link rel="stylesheet" href="styles.css">
+
+</head>
+<body>    
+    
+    <nav id="nav_bar">
+        <li><a id="main_web_page"></a></li>
+        <button id="showDetails">Show details</button>
+        <br><br>
+        <div id="detta" hidden = "true">
+        <p id="phone"></p>
+        <p id="gstin"></p>
+        <p id="field1"></p>
+        <p id="field2"></p>
+        <p id="field3"></p>
+        <p id="business_address"></p>
+        <p id="business_des"></p>
+
+    </div>
+    </nav>
+
+
+
+
+    <div id="business_active_information_div">
+        <center>
+        <h2 id="business_active_information"></h2>
+            </center>
+    </div>
+
+
+    <div id="div_all_products"><h2 id="all_products">All Products</h2>
+    <button id="all_clear" onclick="var Val = confirm('Do you want to clear all item selections?');if( Val == true ){sessionStorage.clear(); location.reload();return true;}else{return false;}">Clear all selections</button></div>
+
+    <div class="all_cards">
+    <!-- <div class="card">
+
+        <div class="card-image">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b6/Image_created_with_a_mobile_phone.png/800px-Image_created_with_a_mobile_phone.png"  class="image">
+        </div>
+
+        <div class="card-info">
+
+            <h1 id="item_name">Item name</h1>
+            <p id="category_name">Category name</p>
+
+            <p id="item_description">Here is the place for the description of the item as description.</p>
+
+            <h2 id="item_price">Price: 5000</h2>
+
+            <button class="buy-button">&#62;</button>
+
+            <h2  class="number_of_items">22</h2>
+
+            <button class="view-button">&#60;</button>
+            
+
+
+        </div>
+
+    </div> -->
+    </div>
+
+    <div id="bottom_bar">
+        <h1 id="orderooo" hidden="true"></h1>
+    
+        <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+        width="40px" height="36px" viewBox="0 0 40 36" style="enable-background:new 0 0 40 36;" xml:space="preserve">
+   <g id="Page-1_4_" sketch:type="MSPage">
+       <g id="Desktop_4_" transform="translate(-84.000000, -410.000000)" sketch:type="MSArtboardGroup">
+           <path id="Cart" sketch:type="MSShapeGroup" class="st0" d="M94.5,434.6h24.8l4.7-15.7H92.2l-1.3-8.9H84v4.8h3.1l3.7,27.8h0.1
+               c0,1.9,1.8,3.4,3.9,3.4c2.2,0,3.9-1.5,3.9-3.4h12.8c0,1.9,1.8,3.4,3.9,3.4c2.2,0,3.9-1.5,3.9-3.4h1.7v-3.9l-25.8-0.1L94.5,434.6"
+               />
+       </g>
+   </g>
+     </svg>        
+
+    
+    </div>
+
+    <dialog id="favDialog">
+        <form method="dialog" id="form">
+          <h2 class="text_inside_dialog">Confirmation </h2>
+          <p class="text_inside_dialog">Order Summary: </p>
+
+          <div class="cartShow_all_list">
+
+          <!-- <div id="cartShow_list">
+
+
+                <img id="cartShow_list_item_image" src="https://images.unsplash.com/photo-1534644107580-3a4dbd494a95?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80"/>
+                <p id="cartShow_list_item_name">Item Name</p>
+                <p id="cartShow_list_item_number">Total Number</p>
+                <p id="cartShow_list_item_price">Price</p>
+                
+                
+
+          </div> -->
+
+        </div>
+
+        <div id="price_details">
+
+            <hr style="width: 100%; opacity: 0.4; margin-top: 12px; margin-bottom: 12px;"/>
+
+            <p id="price_text_sub_total">Sub Total</p>
+            <p id="price_price_sub_total">0</p>
+            <p id="price_text_delivery_charges">Delivery Charges</p>
+            <p id="price_price_delivery_charges">Rs 500</p>
+            <p id="price_text_gst">Tax</p>
+            <p id="price_price_gst">0</p>
+
+           <hr style="width: 100%; opacity: 0.4; margin-top: 12px; margin-bottom: 12px;"/>
+           <p id="price_text_total_amount">Total Amount</p>
+           <p id="price_price_total_amount">Rs 2178</p>
+        </div>
+
+        <br><br>
+
+        <p class="text_inside_dialog1">Please verify your order before confirm. You can click cancel and edit your orders, if needed to edit.</p>
+
+        <center><br><p style="font-weight:600 ; color: blue;">COD - Cash should be paid on delivery.</p></center>
+
+            
+
+
+          <div id="buttonss">
+            <button value="cancel" id="cancelBtn"><h3 style="color: white;">Cancel</h3></button>
+            <button id="confirmBtn" value="default"><h3 style="color: black;">Confirm</h3></button>
+          </div>
+        </form>
+      </dialog>
+
+      <output style="color: black;"></output>
+
+      <script src="https://www.gstatic.com/firebasejs/6.0.2/firebase.js"></script>
+    <script type="module" src="script.js">
+    </script>
+
+</body>
+</html>

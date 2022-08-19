@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="text_bold_montserrat">
+        <item name="fontFamily">@font/montserrat_bold</item>
+        <item name="android:textColor">@color/full_black</item>
+
+    </style>
+
+    <style name="text_light_montserrat">
+        <item name="fontFamily">@font/montserrat_light</item>
+        <item name="android:textColor">@color/full_black</item>
+
+    </style>
+
+</resources>

@@ -1,0 +1,134 @@
+<resources>
+    <string name="app_name">Store Ma</string>
+    <string name="string_app_logo">App Logo</string>
+    <string name="string_theme_image_of_an_app">Theme image of an app</string>
+    <string name="string_join_online_store_today">Join online store today.</string>
+    <string name="string_open_with_google">Open with google</string>
+    <string name="string_or">or</string>
+    <string name="string_sign_up_with_your_phone">Sign up with your phone number</string>
+    <string name="string_terms_and_others"><![CDATA[By signing up, you agree to the <a href="https://www.storema.in/documents/termsOfUse.html">Terms of Service</a> and <a href="https://www.storema.in/documents/privacypolicy.html">Privacy Policy</a>.]]></string>
+    <string name="string_already_have_an_account">Already have an account?</string>
+    <string name="string_sign_in">Sign in</string>
+    <string name="text_phone_number">PHONE NUMBER</string>
+    <string name="text_password">PASSWORD</string>
+    <string name="string_sign_up">Sign up</string>
+    <string name="string_password_again">PASSWORD AGAIN</string>
+    <string name="string_verify_your_otp_here">Verify your OTP here.</string>
+    <string name="string_don_t_receive_the_otp">Don\'t receive the OTP?</string>
+    <string name="string_resend">Resend</string>
+    <string name="string_confirm">Confirm</string>
+    <string name="string_dashboard">Dashboard</string>
+    <string name="string_items_list">Items list</string>
+    <string name="string_orders">Orders</string>
+    <string name="string_settings">Settings</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="string_add_business">Add business</string>
+    <string name="string_business_name">BUSINESS NAME *</string>
+    <string name="string_gstin">GSTIN</string>
+    <string name="string_email_address">EMAIL ADDRESS</string>
+    <string name="string_extra_details">Extra details</string>
+    <string name="string_business_address">BUSINESS ADDRESS</string>
+    <string name="string_business_description">BUSINESS DESCRIPTION</string>
+    <string name="string_business_type">BUSINESS TYPE</string>
+    <string name="string_add_field">Add field</string>
+    <string name="string_overview">Overview</string>
+    <string name="string_order_summary">Order summary</string>
+    <string name="string_orders_received">Orders received</string>
+    <string name="string_100">100</string>
+    <string name="string_pending_orders">Pending orders</string>
+    <string name="string_completed_orders">Completed orders</string>
+    <string name="string_total_revenues">Total revenues</string>
+    <string name="string_4_000">4,000</string>
+    <string name="string_25">25</string>
+    <string name="string_accepted_orders">Accepted orders</string>
+    <string name="string_shipped_orders">Shipped orders</string>
+    <string name="string_picked_up">Picked up</string>
+    <string name="string_delivered">Delivered</string>
+    <string name="string_edit">Edit</string>
+    <string name="string_company_name">company name</string>
+    <string name="string_accept_orders">Accept Orders</string>
+    <string name="string_share_store_link">Share Store Link</string>
+    <string name="string_setup_charges">Setup Charges</string>
+    <string name="string_privacy_policy">Privacy Policy</string>
+    <string name="string_terms_of_use">Terms of Use</string>
+    <string name="string_contact_us">Contact Us</string>
+    <string name="string_log_out">Log Out</string>
+    <string name="string_add_items">Add items</string>
+    <string name="string_item_name">ITEM NAME *</string>
+    <string name="string_category">Category *</string>
+    <string name="string_mrp">MRP *</string>
+    <string name="string_discount_in_or_flat">DISCOUNT IN % OR FLAT</string>
+    <string name="string_gst_in">GST IN %</string>
+    <string name="string_description">DESCRIPTION</string>
+    <string name="string_done">Done</string>
+    <string name="string_meggie">Meggie</string>
+    <string name="string_add_more_items">Add more items</string>
+    <string name="string_search">Search...</string>
+    <string name="string_order_number">order number</string>
+    <string name="string_customer_name">customer name</string>
+    <string name="string_date">date</string>
+    <string name="string_field_name_1">FIELD NAME 1</string>
+    <string name="string_field_value_1">FIELD VALUE 1</string>
+    <string name="string_field_name_2">FIELD NAME 2</string>
+    <string name="string_field_value_2">FIELD VALUE 2</string>
+    <string name="string_field_name_3">FIELD NAME 3</string>
+    <string name="string_field_value_3">FIELD VALUE 3</string>
+    <string name="string_welcome_back_to_online_store">Welcome back to online store</string>
+    <string name="edit_item">Edit item</string>
+    <string name="string_order_details">Order Details</string>
+    <string name="order_name">order name</string>
+    <string name="string_price">Price</string>
+    <string name="string_items_total">Items Total:</string>
+    <string name="string_gst">Tax:</string>
+    <string name="string_delivery_charge">Delivery Charge:</string>
+    <string name="string_total">Total:</string>
+    <string name="string_name">Name:</string>
+    <string name="string_phone">Phone:</string>
+    <string name="string_customer_phone">customer phone</string>
+    <string name="string_email">Email:</string>
+    <string name="string_customer_email">customer email</string>
+    <string name="string_address">Address:</string>
+    <string name="string_customer_details">Customer Details</string>
+    <string name="string_delivery_charges">DELIVERY CHARGES *</string>
+    <string name="string_store_link">Store Link</string>
+    <string name="string_setup_store_link">Setup store link</string>
+    <string name="string_search_by_name_or_order_number">Search ...</string>
+
+    <string name="default_notification_channel_id">PushNotifications</string>
+    <string name="string_edit_business">Edit business</string>
+    <string name="string_about_business">About business</string>
+    <string name="string_done_editing">Done Editing</string>
+    <string name="strign_edit_items">Edit items</string>
+
+
+    <string-array name="business_type_array">
+        <item>Clothing Store</item>
+        <item>Cosmetics Store</item>
+        <item>Electrical Supply Store</item>
+        <item>Electronics Store</item>
+        <item>Fruits Store</item>
+        <item>Grocery Store</item>
+        <item>Second Hand Store</item>
+        <item>Tile Store</item>
+    </string-array>
+
+    <string-array name="item_type_array">
+        <item>Food</item>
+        <item>Make Up</item>
+        <item>Laptop</item>
+        <item>Handheld Device</item>
+        <item>Marble</item>
+        <item>Electrical Appliance</item>
+        <item>Fruits</item>
+    </string-array>
+
+
+    <string-array name="pieces_unit_values">
+        <item>/PICS</item>
+        <item>/DOZENS</item>
+        <item>/10PICS</item>
+        <item>/PACKET</item>
+        <item>/KG</item>
+    </string-array>
+</resources>

@@ -1,0 +1,501 @@
+<html lang="en">
+   <head>
+      <meta charset="UTF-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>Kec Robotics</title>
+      <link rel="icon" type="image/x-icon" href="favicon.ico">
+   </head>
+   <body cz-shortcut-listen="true">
+      <center>
+         <br>
+         <h1 id="delivery_info">Delivery Form</h1>
+         <br>
+         <h2 id="make_comment">Please fill up the form for delivery.</h2>
+         <br>
+         <div class="loader" id="loadeeer"></div>
+      </center>
+      <div class="formbold-main-wrapper" id="main_id_for_all_content">
+         <div class="formbold-form-wrapper">
+            <div class="formbold-mb-5"><label for="name" class="formbold-form-label" id="full_name_text"> Full Name </label><input type="text" name="name" id="name" placeholder="Full Name" class="formbold-form-input" required=""></div>
+            <div class="formbold-mb-5"><label for="add" class="formbold-form-label" id="address_text">Address </label><input type="text" name="add" id="add" placeholder="Enter your Address" class="formbold-form-input" required=""></div>
+            <div class="formbold-mb-5"><label for="email" class="formbold-form-label" id="email_text">Email </label><input type="email" name="email" id="email" placeholder="Enter your email" class="formbold-form-input" required=""></div>
+            <div class="formbold-mb-5"><label for="subject" class="formbold-form-label" id="mobile_text"> Mobile Number </label><input type="tel" name="mobile" id="mobile" placeholder="Enter your mobile number" class="formbold-form-input" required=""></div>
+            <div>
+               <div id="recaptcha-container"></div>
+               <center><button id="verify_number" class="formbold-btn" onclick="phoneAuth();">Get OTP</button></center>
+               <br><input type="number" name="otp" id="otp" placeholder="Enter OTP here" class="formbold-form-input" required="" ><br><button id ="subbmit_form_button" class="formbold-btn1">Submit</button>
+            </div>
+         </div>
+      </div>
+      <style>
+        * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    font-family: "Inter", sans-serif;
+}
+.formbold-mb-5 {
+    margin-bottom: 20px;
+}
+.formbold-pt-3 {
+    padding-top: 12px;
+}
+.formbold-main-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 48px;
+}
+.formbold-form-wrapper {
+    margin: 0 auto;
+    max-width: 550px;
+    width: 100%;
+    background: white;
+}
+.formbold-form-label {
+    display: block;
+    font-weight: 500;
+    font-size: 16px;
+     color: #07074d;
+    margin-bottom: 12px;
+}
+.formbold-form-label-2 {
+    font-weight: 600;
+    font-size: 20px;
+    margin-bottom: 20px;
+}
+.formbold-form-input {
+    width: 100%;
+    padding: 12px 24px;
+    border-radius: 6px;
+    border: 1px solid #e0e0e0;
+    background: white;
+    font-weight: 500;
+    font-size: 16px;
+    color: #6b7280;
+    outline: none;
+    resize: none;
+}
+.loader {
+    border: 16px solid #f3f3f3;
+     border-radius: 50%;
+    border-top: 16px solid #3498db;
+    width: 20px;
+    height: 20px;
+    -webkit-animation: spin 2s linear infinite;
+    /* Safari */
+    animation: spin 2s linear infinite;
+}
+@-webkit-keyframes spin {
+    0% {
+         -webkit-transform: rotate(0deg);
+    }
+    100% {
+         -webkit-transform: rotate(360deg);
+    }
+}
+@keyframes spin {
+    0% {
+         transform: rotate(0deg);
+    }
+    100% {
+         transform: rotate(360deg);
+    }
+}
+ .formbold-form-input:focus {
+    border-color: #6a64f1;
+    box-shadow: 0px 3px 8px rgba(0, 0, 0, 0.05);
+}
+.formbold-btn {
+    text-align: center;
+    font-size: 16px;
+    border-radius: 6px;
+    padding: 14px 32px;
+    border: none;
+    font-weight: 600;
+    background-color: #6a64f1;
+    color: white;
+    cursor: pointer;
+}
+.formbold-btn:hover {
+    box-shadow: 0px 3px 8px rgba(0, 0, 0, 0.05);
+}
+.formbold-btn1{
+    bottom:0;
+    text-align: center;
+    font-size: 16px;
+    border-radius: 6px;
+    padding: 14px 32px;
+    border: none;
+    font-weight: 600;
+    background-color: #6a64f1;
+    color: white;
+    cursor: pointer;
+    position:relative;
+    margin-top:56px;
+    width:100%;
+}
+.formbold--mx-3 {
+    margin-left: -12px;
+    margin-right: -12px;
+}
+.formbold-px-3 {
+    padding-left: 12px;
+    padding-right: 12px;
+}
+.flex {
+    display: flex;
+}
+
+
+      </style>
+
+<script src="https://www.gstatic.com/firebasejs/6.0.2/firebase.js"></script>
+
+<!-- TODO: Add SDKs for Firebase products that you want to use
+     https://firebase.google.com/docs/web/setup#config-web-app -->
+
+<script>
+    // Your web app's Firebase configuration
+    var firebaseConfig = {
+   apiKey: "AIzaSyDP_JD9a91uuReYAd61-oCss1hzLIQyg2s",
+   authDomain: "store-ma.firebaseapp.com",
+   projectId: "store-ma",
+   storageBucket: "store-ma.appspot.com",
+   messagingSenderId: "664769599197",
+   appId: "1:664769599197:web:c9c85f15b20f50a694ed34",
+   measurementId: "G-W7C0LD2T4Q"
+ };
+    // Initialize Firebase
+    firebase.initializeApp(firebaseConfig);
+
+
+    
+
+
+
+
+window.onload=function () {
+    render();
+  };
+
+  function render() {
+    window.recaptchaVerifier=new firebase.auth.RecaptchaVerifier('recaptcha-container');
+    recaptchaVerifier.render();
+}
+
+
+
+
+
+
+
+
+    const subbmitForm = document.getElementById("subbmit_form_button");
+    const formName = document.getElementById("name");
+    const everyThing = document.getElementById("main_id_for_all_content");
+    const makeComment= document.getElementById("make_comment");
+    const deliveryInfo = document.getElementById("delivery_info");
+    const formAddress = document.getElementById("add");
+    const formEmail = document.getElementById("email");
+    const formMobile = document.getElementById("mobile");
+
+    const formNameText = document.getElementById("full_name_text");
+    const formAddresText = document.getElementById("address_text");
+    const formEmailText= document.getElementById("email_text");
+    const formMobileText = document.getElementById("mobile_text");
+    const loaderrrrr = document.getElementById("loadeeer");
+
+    const verify_number = document.getElementById("verify_number");
+    const otp = document.getElementById("otp");
+    const recaptcha_container = document.getElementById("recaptcha-container");
+
+    let totalOrders = JSON.parse(sessionStorage.getItem('totalOrdersFinal'));
+
+    loaderrrrr.hidden = true;
+    let coderesult;
+
+    const db = firebase.firestore();
+
+    let phoneNumber = sessionStorage.getItem('phoneNumberFinal');
+    let storeLink = sessionStorage.getItem('storeLinkFinal');
+    let deliveryCharges = sessionStorage.getItem('deliveryChargesFinal');
+
+
+            otp.hidden = true;
+
+    
+
+
+
+
+    function phoneAuth() {
+
+        if(formMobile.value == ""){
+            //number cannot be empty.
+            
+        }else {
+    
+            if(formMobile.value.length == 10){
+
+                otp.hidden = false;
+    
+                //get the number
+                
+                //phone number authentication function of firebase
+                 //it takes two parameter first one is number,,,second one is recaptcha
+                firebase.auth().signInWithPhoneNumber('+91'+formMobile.value,window.recaptchaVerifier).then(function (confirmationResult) {
+                //s is in lowercase
+            window.confirmationResult=confirmationResult;
+            coderesult=confirmationResult;
+            alert("OTP Sent");
+        }).catch(function (error) {
+            alert(error.message);
+        });
+                
+               
+    
+        }
+    
+     }
+    
+        
+    }
+
+
+
+   
+
+    //   const appVerifier = window.recaptchaVerifier;
+
+    function storeIntoFirebase(totalNumberofOrders) {
+
+    }
+
+
+    subbmitForm.onclick =async function(){
+
+        var code=otp.value;
+        coderesult.confirm(code).then(async function (result) {
+
+            
+        
+
+
+
+        loaderrrrr.hidden = false;
+
+        subbmitForm.hidden = true;
+                            everyThing.hidden = true;
+    formName.hidden = true;
+    formEmail.hidden=true;
+    formAddress.hidden=true;
+    formMobile.hidden=true;
+    formNameText.innerHTML='';
+    formAddresText.innerHTML='';
+    formEmailText.innerHTML='';
+    formMobileText.innerHTML='';
+    makeComment.innerHTML='';
+
+       
+
+        if(formName.value !==""){
+            if(formAddress.value !== ""){
+                if(formEmail.value !== ""){
+                    if(formMobile.value !==""){
+                        let documentName = Date.now()+"";
+                        let date = new Date();
+                        let year = date.getFullYear();
+                        let monthsseee = date.getMonth();
+                        let monthss = monthsseee+1;
+                        let day = date.getDate();
+
+                        var ref = db.collection("_"+phoneNumber+"_orders").doc(documentName+'');
+                        
+
+                        try {
+
+                            ref.set({
+                                    delivery_charges: deliveryCharges+'',
+                                    total_orders: totalOrders.length+'',
+                                    order_number: documentName+'',
+                                    customer_name: formName.value+'',
+                                    customer_address: formAddress.value+'',
+                                    customer_email: formEmail.value+'',
+                                    customer_phone: formMobile.value+'',
+                                    order_date: year+'-'+monthss+'-'+day,
+                                    order_status: 'new',
+
+                                 }
+                            );
+                            
+                        } catch (error) {
+
+                            
+                            
+                        }
+
+                        
+
+
+                        for(let i = 0; i < totalOrders.length; i++){
+
+                            let numberKey = i+1;
+
+                            let orderKey = "order"+numberKey;
+                            let valueKey = "value"+numberKey;
+                            let moneyKey = "price"+numberKey;
+                            let nameKey = "order_name"+numberKey;
+                            let imageKey = "order_image"+numberKey;
+                            let gstKey = "gst"+numberKey;
+
+                            try{
+
+                                ref.update({
+                                        [orderKey] : totalOrders[i][0],
+                                        [valueKey] : totalOrders[i][1],
+                                        [moneyKey] : totalOrders[i][2],
+                                        [nameKey] : totalOrders[i][3],
+                                        [imageKey] : totalOrders[i][4],
+                                        [gstKey] : totalOrders[i][5]
+
+                                     }
+                                );
+
+
+                            }catch(e){
+
+                            }
+
+                            
+
+
+                        } 
+
+                        let intOldOrderNumber =0;
+                        let newOrderNumber = "0";
+
+                        
+                        
+                        const ref1 = db.collection("_"+phoneNumber+"_business").doc("data_for_orders");
+                        ref1.get().then((doc) => {
+                            if(doc.exists){
+
+            
+                                intOldOrderNumber = parseInt(doc.data().number_of_all_orders);
+                                intOldOrderNumber = intOldOrderNumber +1;
+                                newOrderNumber = intOldOrderNumber+"";
+
+                                
+                                
+                                ref1.update(
+                                {
+                                    number_of_all_orders: newOrderNumber+''
+                                }
+                            );
+
+
+                        }}).catch((error)=>{
+
+                        });
+                            
+
+                         try {
+
+                            
+                            
+
+
+
+
+                            const data = { "to": "/topics/"+storeLink,
+                                "notification" : {
+                                    "title": "Congratulations! New order",
+                                    "body" : "Order has been placed by "+ formName.value+". \nOrder No: "+ documentName
+                                }
+                        };
+
+                                fetch('https://fcm.googleapis.com/fcm/send', {
+                                method: 'POST',
+                                headers: {
+                                    'Content-Type': 'application/json',
+                                    'Authorization' : 'key = AAAAmsdbFt0:APA91bHYVJ5SqkV89rcvWjDIIyGTjcDc-RsOgmlH3iHmdJ6SiVrwylViYHnflJ7GMYV-Bi-JI8MvhBOEjuua2drEl0aUpC4XVHt6KB6Y_acCW1YzqKVXSHpxE22HW5Vq8GHwEE4-u7X8'
+                                 },
+                                     body: JSON.stringify(data),
+                                    })
+                                .then((response) => response.json())
+                                .then((data) => {
+                                 
+                                })
+                                .catch((error) => {
+                                  
+                                });
+                            deliveryInfo.innerHTML = 'Your order is placed successfully.';
+                        loaderrrrr.hidden = true;
+                        recaptcha_container.hidden = true;
+                        verify_number.hidden = true;
+
+                        otp.hidden = true;
+
+                        browser.history.deleteAll();
+
+
+                
+                         } catch (error) {
+
+                             
+                
+                            }
+            
+
+
+                        }
+                        
+
+                        
+                         
+                        
+                        
+
+
+
+                        
+
+
+
+
+
+
+
+
+
+                    }
+                }
+            }
+        }
+
+    ).catch(function (error) {
+        alert(error.message);
+    });
+        
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+</script>
+
+<script src="insertDeliveryScript.js" type="text/javascript"></script>
+   </body>
+</html>

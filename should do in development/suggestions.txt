@@ -1,0 +1,37 @@
+SHARING STORE LINK
+	1.	It should be like webstores.in/store/{store name}.
+	2.	Store name can be editable.
+
+
+ADDING BUSINESS DETAILS PAGE
+	1.	Don't make fields for DL Number and FSSAI Number.
+	2.	Add option to add 3 additional fields to user.
+	3.	Additional field can be used to make title and value.
+	4.	Add field for email address.
+	5.	Add country field
+	6.	Add currency field
+
+
+DASHBOARD
+	1.	Store Views should be added.
+
+
+MAIN SCREEN
+	1.	Remove Email and change it into Phone Number in signup section.
+
+
+LOGIN SCREEN
+	1.	Make user can enter their phone number and password.
+
+
+SIGNUP SCREEN
+	1.	Make user can signup using phone number and password.
+
+
+ADD SCREEN : OTP VERIFICATION
+	1.	Make to verify otp before showing business details page.
+
+
+
+
+

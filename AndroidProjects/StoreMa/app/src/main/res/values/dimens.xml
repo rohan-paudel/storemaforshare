@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!-- Margins used in app -->
+    <dimen name="app_start_margin">37dp</dimen>
+    <dimen name="app_end_margin">37dp</dimen>
+    <dimen name="app_top_margin">35dp</dimen>
+    <dimen name="container_top_margin">24dp</dimen>
+    <dimen name="inter_container_top_margin">14dp</dimen>
+
+
+    <dimen name="fragment_margin_top">24dp</dimen>
+    <dimen name="fragment_margin_start">24dp</dimen>
+    <dimen name="fragment_margin_end">24dp</dimen>
+
+
+    <dimen name="margin_between_grid">8dp</dimen>
+
+
+
+    <!-- Button Height-->
+
+    <dimen name="button_height">45dp</dimen>
+
+
+
+    <!-- Text Size -->
+
+
+    <!-- corner radius -->
+    <dimen name="button_radius">10dp</dimen>
+
+
+</resources>

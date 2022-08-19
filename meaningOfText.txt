@@ -1,0 +1,16 @@
+Process of completing order will be
+Steps :
+1) order given by user
+2) order accepted or rejected by admin (store)
+3) shipped - ready to send with delivery company or delivery boy )
+4) Picked Up - delivery partners collected a package to deliver with customers
+5) Delivered- The product Delivered to customers by delivery partner or boy.
+
+
+
+
+new
+accepted / rejected
+shipped
+picked
+delivered

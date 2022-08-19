@@ -1,0 +1,183 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/background_white"
+    android:orientation="vertical">
+
+
+
+
+
+    <com.google.android.material.card.MaterialCardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/fragment_margin_top"
+        android:elevation="2dp"
+        app:cardBackgroundColor="@color/background_white"
+        app:cardElevation="0dp">
+
+
+        <TextView
+            android:id="@+id/string_title_settings"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/montserrat_semibold"
+            android:gravity="center"
+            android:paddingBottom="12dp"
+            android:text="@string/string_items_list"
+            android:textColor="@color/fragment_title_color"
+            android:textSize="24sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+
+    </com.google.android.material.card.MaterialCardView>
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/background_white"
+        android:scrollbars="none">
+
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/fragment_margin_start"
+            android:layout_marginEnd="@dimen/fragment_margin_end">
+
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/search_items_card_view"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/container_top_margin"
+                app:cardBackgroundColor="@color/full_white"
+                app:cardCornerRadius="@dimen/button_radius"
+                app:cardElevation="0dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <EditText
+                    android:id="@+id/search_items"
+                    android:inputType="textCapWords"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@android:color/transparent"
+                    android:padding="12dp"
+                    android:hint="@string/string_search_by_name_or_order_number"
+                    android:textColorHint="#905856D6"
+                    android:autofillHints=""
+                    android:imeOptions="actionDone"
+                    android:maxLines="1"
+                    android:importantForAutofill="no" />
+
+
+            </com.google.android.material.card.MaterialCardView>
+
+
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/material_card_view"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/container_top_margin"
+                app:cardBackgroundColor="@color/full_white"
+                app:cardCornerRadius="@dimen/button_radius"
+                app:cardElevation="0dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/search_items_card_view">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+
+
+
+                    <com.google.android.material.card.MaterialCardView
+                        android:id="@+id/card_progress"
+                        android:layout_width="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:visibility="visible"
+                        app:cardCornerRadius="400dp"
+                        app:cardElevation="9dp"
+                        android:layout_gravity="center_horizontal"
+                        app:cardBackgroundColor="@color/full_white"
+                        android:layout_centerHorizontal="true"
+                        android:layout_height="wrap_content">
+
+                        <ProgressBar
+                            android:id="@+id/progress"
+                            android:layout_width="40dp"
+                            android:layout_height="40dp"
+                            android:max="3"
+                            android:visibility="visible"
+                            android:padding="5dp"
+                            android:elevation="1dp"
+                            android:progress="100" />
+
+
+                    </com.google.android.material.card.MaterialCardView>
+
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/items_list_recycler_view"
+                        android:layout_width="match_parent"
+                        android:nestedScrollingEnabled="false"
+                        android:layout_height="wrap_content"/>
+
+                    <com.google.android.material.card.MaterialCardView
+                        android:id="@+id/btn_add_more_items"
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/button_height"
+                        android:layout_marginStart="@dimen/container_top_margin"
+                        android:layout_marginTop="@dimen/container_top_margin"
+                        android:layout_marginEnd="@dimen/container_top_margin"
+                        android:background="@drawable/button_background_fill"
+                        app:cardBackgroundColor="@color/blue_button"
+                        app:cardCornerRadius="@dimen/button_radius"
+                        app:cardElevation="0dp">
+
+
+                        <TextView
+                            style="@style/text_bold_montserrat"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:padding="11dp"
+                            android:text="@string/string_add_more_items"
+                            android:textColor="@color/full_white"
+                            android:textSize="14sp" />
+
+
+                    </com.google.android.material.card.MaterialCardView>
+
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="15dp" />
+
+
+                </LinearLayout>
+
+
+            </com.google.android.material.card.MaterialCardView>
+
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="120dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/material_card_view" />
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.core.widget.NestedScrollView>
+
+
+</LinearLayout>
